@@ -4,7 +4,7 @@ import './header.scss'
 function Header() {
   return (
     <header>
-      I am Lemon
+      <p>I am Header</p>
     </header>
   )
 }
