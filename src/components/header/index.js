@@ -3,8 +3,8 @@ import './header.scss'
 
 function Header() {
   return (
-    <header>
-      <p>I am Header</p>
+    <header className="headerComponent">
+      <p className="logoIMG">I am Header</p>
     </header>
   )
 }
