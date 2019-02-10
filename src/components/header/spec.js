@@ -11,8 +11,10 @@ describe('Header Component', () => {
     // shallow render of component
 
     const component = shallow(<Header />)
-    const wrapper = component.find('.HeaderComponent')
+    const wrapper = component.find('.headerComponent')
     expect(wrapper.length).toBe(1)
+
+    console.log(component.debug())
   })
 
 
