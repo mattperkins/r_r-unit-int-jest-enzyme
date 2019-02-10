@@ -5,13 +5,18 @@ import Header from './index'
 
 Enzyme.configure({ adapter: new Adapter() })
 
+const setUp = (props = {}) => {
+  const component = shallow(<Header {...props} />)
+  return component
+}
+
 describe('Header Component', () => {
 
   it('should render without errors', () => {
 
     // shallow render of component
 
-    const component = shallow(<Header />)
+    const component = setUp()
     const wrapper = component.find('.headerComponent')
     expect(wrapper.length).toBe(1)
 
