@@ -4,9 +4,10 @@ import Enzyme, { shallow } from 'enzyme'
 import Header from './index'
 
 Enzyme.configure({ adapter: new Adapter() })
+
 describe('Header Component', () => {
 
-  it('It should render without errors', () => {
+  it('should render without errors', () => {
 
     // shallow render of component
 
@@ -14,7 +15,14 @@ describe('Header Component', () => {
     const wrapper = component.find('.headerComponent')
     expect(wrapper.length).toBe(1)
 
-    console.log(component.debug())
+    console.log(wrapper.debug())
+  })
+
+  it('should render logo', () => {
+
+    const component = shallow(<Header />)
+    const wrapper = component.find('.logoIMG')
+    expect(wrapper.length).toBe(1)
   })
 
 
