@@ -20,7 +20,7 @@ describe('Header Component', () => {
   it('should render without errors', () => {
 
     // shallow render of component
-    const wrapper = component.find('.headerComponent')
+    const wrapper = component.find(`[data-test='headerComponent']`)
     expect(wrapper.length).toBe(1)
 
     // console.log(wrapper.debug())
@@ -28,7 +28,7 @@ describe('Header Component', () => {
 
   it('should render logo', () => {
 
-    const wrapper = component.find('.logoIMG')
+    const wrapper = component.find(`[data-test='logoIMG']`)
     expect(wrapper.length).toBe(1)
   })
 
