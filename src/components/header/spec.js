@@ -10,6 +10,11 @@ const setUp = (props = {}) => {
   return component
 }
 
+const findByTestAtrr = (component, attr) => {
+  const wrapper = component.find(`[data-test='${attr}']`)
+  return wrapper
+}
+
 describe('Header Component', () => {
 
   let component
@@ -20,7 +25,7 @@ describe('Header Component', () => {
   it('should render without errors', () => {
 
     // shallow render of component
-    const wrapper = component.find(`[data-test='headerComponent']`)
+    const wrapper = findByTestAtrr(component, 'headerComponent')
     expect(wrapper.length).toBe(1)
 
     // console.log(wrapper.debug())
@@ -28,7 +33,7 @@ describe('Header Component', () => {
 
   it('should render logo', () => {
 
-    const wrapper = component.find(`[data-test='logoIMG']`)
+    const wrapper = findByTestAtrr(component, 'logoIMG')
     expect(wrapper.length).toBe(1)
   })
 
