@@ -1,6 +1,5 @@
 import * as React from 'react'
 import ReactDOM from 'react-dom'
-import registerServiceWorker from './registerServiceWorker'
 import './index.scss'
 import Header from './components/header';
 import Headline from './components/headline';
@@ -13,7 +12,7 @@ class Root extends React.Component {
 
       <>
         <Header />
-        <Headline />
+        <Headline desc="This is a description" />
       </>
 
 
@@ -23,4 +22,3 @@ class Root extends React.Component {
 
 ReactDOM.render(<Root />,
   document.getElementById('root'))
-registerServiceWorker()
