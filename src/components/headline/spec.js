@@ -13,20 +13,45 @@ const setUp = (props = {}) => {
 
 describe('Headline Component', () => {
 
-  let component
-  beforeEach(() => {
-    component = setUp()
+  describe('Have props', () => {
+
+    let wrapper
+    beforeEach(() => {
+      const props = {
+        header: 'Test Header',
+        desc: 'Test Description'
+      }
+      wrapper = setUp(props)
+    })
+
+    it('Should render without errors', () => {
+      const component = findByTestAtrr(wrapper, 'HeadlineComponent')
+      expect(component.length).toBe(1)
+    })
+
+    it('Should render a H1', () => {
+      const h1 = findByTestAtrr(wrapper, 'header')
+      expect(h1.length).toBe(1)
+    })
+
+    it('Should render a desc', () => {
+      const p = findByTestAtrr(wrapper, 'desc')
+      expect(p.length).toBe(1)
+    })
   })
 
-  it('should render without errors', () => {
+  describe('Has no props', () => {
 
-    // shallow render of component
-    const wrapper = findByTestAtrr(component, 'headline')
-    expect(wrapper.length).toBe(1)
+    let wrapper
+    beforeEach(() => {
+      wrapper = setUp()
+    })
 
-    // console.log(wrapper.debug())
+    it('Should not render', () => {
+      const component = findByTestAtrr(wrapper, 'HeadlineComponent')
+      expect(component.length).toBe(0)
+    })
   })
-
 
 
 })
