@@ -7,13 +7,13 @@ class Headline extends React.Component {
     const { header, desc } = this.props
 
     if (!header) {
-      return desc
+      return null
     }
 
     return (
-      <div>
-        <h1>{header}</h1>
-        <p>
+      <div data-test="HeadlineComponent">
+        <h1 data-test="header">{header}</h1>
+        <p data-test="desc">
           {desc}
         </p>
       </div>
