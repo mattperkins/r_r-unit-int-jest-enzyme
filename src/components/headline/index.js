@@ -1,6 +1,6 @@
 import * as React from "react"
 
-class Headline extends Component {
+class Headline extends React.Component {
   render() {
     return (
       <div data-test="headline">
@@ -9,3 +9,5 @@ class Headline extends Component {
     )
   }
 }
+
+export default Headline
