@@ -1,10 +1,21 @@
 import * as React from "react"
 
 class Headline extends React.Component {
+
   render() {
+
+    const { header, desc } = this.props
+
+    if (!header) {
+      return desc
+    }
+
     return (
-      <div data-test="headline">
-        headline
+      <div>
+        <h1>{header}</h1>
+        <p>
+          {desc}
+        </p>
       </div>
     )
   }
