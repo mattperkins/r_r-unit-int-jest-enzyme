@@ -12,7 +12,7 @@ class Root extends React.Component {
 
       <>
         <Header />
-        <Headline desc="This is a description" />
+        <Headline header="A headline" desc="This is a description" />
       </>
 
 
